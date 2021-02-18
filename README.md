@@ -7,6 +7,6 @@ Sesuaikan web-db/web-php/koneksi.php
 
 ##############
 Sesuaikan web-db/docker-compose.yaml
--environment = disesuaikan, samakan dengan koneksi.php
--volume = disesuaikan dengan tempat menyimpan file web-db nya
+1. environment = disesuaikan, samakan dengan koneksi.php
+2. volume = disesuaikan dengan tempat menyimpan file web-db nya
 
