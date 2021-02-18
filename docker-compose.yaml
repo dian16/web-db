@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  db:
+    container_name: mysql
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: web_img
+      MYSQL_USER: root 
+      MYSQL_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - /home/dayen/Documents/latihan/Docker/web-db/web-php/web_img.sql:/web_img.sql
+    networks:
+      - web-network
+  web:
+    image:  web-mysql:1.0
+    container_name: web
+    ports: 
+      - 8080:80
+    depends_on: 
+      - db
+    networks:
+      - web-network
+networks:
+  web-network:
+    name: web-network
